@@ -39,13 +39,13 @@ if (is_post_type_archive()) {
  * ───────────────────────────────────────────────────────── */
 $slug_map = [
   'post' => 'article',
-  'case' => 'cases',
+  // 'case' => 'cases',
 ];
 $slug = $slug_map[$post_type] ?? sanitize_html_class($post_type);
 
 $tax_map = [
   'post' => ['tax_cat' => 'category',  'tax_tag' => 'post_tag'],
-  'case' => ['tax_cat' => 'case-type', 'tax_tag' => 'case-tag'],
+  // 'case' => ['tax_cat' => 'case-type', 'tax_tag' => 'case-tag'],
 ];
 $cfg_tax = $tax_map[$post_type] ?? $tax_map['post'];
 
@@ -109,7 +109,7 @@ $archive_class_str = implode(' ', array_unique($archive_classes));
 $slug_page = get_page_by_path($slug);
 ?>
 
-<section class="page-hero" <?php echo $bg_url ? 'style="background-image:url(' . esc_url($bg_url) . ')"' : ''; ?>>
+<section class="page-hero">
   <div class="ph-container">
     <h1 class="page-title"><?php echo esc_html($prefix . $archive_title); ?></h1>
 

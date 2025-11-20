@@ -6,19 +6,6 @@
 
 get_header();
 
-// ACF：背景圖（支援 ID / array / URL）
-$bg      = get_field('img_bg');
-$bg_url  = '';
-if ($bg) {
-  if (is_array($bg)) {
-    $bg_url = $bg['url'] ?? '';
-  } elseif (is_numeric($bg)) {
-    $bg_url = wp_get_attachment_image_url($bg, 'full');
-  } else {
-    $bg_url = $bg; // 已是 URL
-  }
-}
-$subtitle = get_field('sub_title') ?: '';
 
 // 依頁面 slug 設定
 $slug = get_post_field('post_name', get_queried_object_id());
@@ -53,12 +40,19 @@ $q = new WP_Query([
 ]);
 ?>
  
-<section class="page-hero" <?php echo $bg_url ? 'style="background-image:url(' . esc_url($bg_url) . ')"' : ''; ?>>
+<section class="page-hero">
   <div class="ph-container">
-    <h1 class="page-title"><?php echo esc_html( get_the_title() ); ?></h1>
-    <?php if ($subtitle): ?>
-      <h4 class="page-subtitle"><?php echo esc_html($subtitle); ?></h4>
-    <?php endif; ?>
+    <h1 class="page-title">
+      <?php
+      $slug = get_post_field( 'post_name', get_post() );
+
+      if ( $slug === 'article' ) {
+        echo esc_html( 'Portfolio' );
+      } else {
+        echo esc_html( get_the_title() );
+      }
+      ?>
+    </h1>
   </div>
 </section>
 
