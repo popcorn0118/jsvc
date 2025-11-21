@@ -155,8 +155,8 @@ add_shortcode( 'lang_toggle', function() {
     $target_url = qz_get_url_for_language( $target_lang, $current_url );
 
     // 使用 data-no-translation 避免被 TranslatePress JS 改寫
-    $output  = '<div data-no-translation>';
-    $output .= '<a href="' . esc_url( $target_url ) . '" class="lang-toggle-btn" data-no-translation-href>';
+    $output  = '<div data-no-translation class="lang-toggle-btn ' . esc_html( $current_locale ) . '">';
+    $output .= '<a href="' . esc_url( $target_url ) . '" data-no-translation-href>';
     $output .= esc_html( $label );
     $output .= '</a></div>';
 

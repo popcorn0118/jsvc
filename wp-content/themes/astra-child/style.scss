@@ -488,6 +488,28 @@ footer .site-copyright .line {
 	// border: 1px solid #f5f5f5;
 }
 
+.lang-toggle-btn {
+  > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    width: 42px;
+    height: 42px;
+    color: #FFF;
+    background-color: #2E2E2E;
+    border-radius: 100%;
+    &:hover {
+      background-color: rgba(#2E2E2E, 0.5);
+    }
+  }
+  &.zh_TW {
+    > a {
+      padding: 0 0 0 2px;
+    }
+  }
+}
+
 //首頁客戶好評輪播
 $spacing: 32px;
 .customer-reviews-carousel {
