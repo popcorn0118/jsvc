@@ -32,7 +32,7 @@ $column = get_posts($args_column);
 ?>
 
 <?php if (!empty($column)): ?>
-<ul class="team-carousel">
+<ul class="our-team">
 	<?php 	
 	foreach ($column as $item): 
 		$title = $item->post_title;
@@ -48,40 +48,20 @@ $column = get_posts($args_column);
 		$img_default = '';
 		// $img_default = get_stylesheet_directory_uri() . '/assets/img/img-default.jpg';
 
-		// --- ACF 欄位：職稱 / 英文名 ---
-		$job_title = get_field('job_title', $item->ID) ?: '';
+		// --- ACF 欄位：英文名 ---
 		$name_en   = get_field('name_en',   $item->ID) ?: '';
 
 	?>
 	<li class="item">
-		<div class="info">
-			
-			<div class="img" style="background-image: url(<?php echo !empty($img[0]) ? $img[0] : $img_default; ?>);"></div>
-			<div class="cont">
-				<div class="head">
-					<h3 class="name"><?php echo $title; ?> <?php echo $job_title; ?></h3>
-					<h5 class="name_en"><?php echo $name_en; ?></h5>
-				</div>
-				
-				<div class="meta">
-					<!-- <?php //if (!empty($category[0]->name)) : ?>
-						<div class="category"><?php //echo esc_html($category[0]->name); ?></div>
-					<?php //endif; ?> -->
-
-				</div>
-
-				<div class="desc">
-					<?php echo $desc; ?>
-				</div>
-
-				<div class="read-more btn-text-html">
-					<a href="<?php echo esc_url( home_url( 'team/'.$name ) ); ?>">閱讀更多</a>
-				</div>
-
+		<a class="info" href="<?php echo esc_url( home_url( 'team/'.$name ) ); ?>">
+			<div class="img">
+				<img src="<?php echo !empty($img[0]) ? $img[0] : $img_default; ?>" alt="<?php echo $title; ?>" />
 			</div>
-			
-			
-		</div>
+			<div class="head">
+				<h3 class="name"><?php echo $title; ?></h3>
+				<h5 class="name-en"><?php echo $name_en; ?></h5>
+			</div>
+		</a>
 	</li>		
 
 	<?php endforeach; ?>

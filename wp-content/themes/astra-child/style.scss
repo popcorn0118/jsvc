@@ -10,6 +10,11 @@ Text Domain: astra-child
 Template: astra
 */
 
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+
+$font-oooh-baby: "Oooh Baby", cursive;
+
+
 $primary: var(--e-global-color-primary);
 $second: var( --e-global-color-secondary );
 $text: var( --e-global-color-text );
@@ -592,8 +597,65 @@ $spacing: 32px;
 }
 
 
+//團隊列表
+.our-team {
+  list-style: none;
+  padding: 0 !important;
+  margin: 0 !important;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 120px;
+  @media (max-width: 921px) {
+    gap: 60px;
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (max-width: 544px) {
+    // gap: 30px;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  .item {
+    .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .img {
+      border-radius: 100%;
+      overflow: hidden;
+      max-width: 320px;
+    }
+    .head {
+      text-align: center;
+      margin-top: 50px;
+    }
+    .name {
+      font-size: 28px;
+      font-weight: 700;
+      color: #1A1A1A;
+      @media (max-width: 768px) {
+        font-size: 20px;
+      }
+    }
+    .name-en {
+      font-size: 14px;
+      font-weight: 400;
+      color: #1A1A1A;
+    }
+    .info {
+      &:hover {
+        .name, .name-en {
+          transition: 0.4s;
+          color: rgba(#1A1A1A, 0.5);
+        }
+      }
+    }
+  }
+}
 
-// 醫師單頁
+// 團隊單頁
 body.team-template {
   .single-team {
     width: 100%;
@@ -601,9 +663,13 @@ body.team-template {
     flex-direction: column;
     position: relative;
     min-height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     .single-team-warp {
-      @include gradient-bg(#FEFEFED9, $bg );
-      padding: 230px 24px 0 24px;
+      background-color: rgba(#FEFEFE, 0.95);
+      padding: 120px 24px 0 24px;
       position: relative;
       @media (max-width: 768px) {
         padding: 160px 24px 0 24px;
@@ -613,56 +679,70 @@ body.team-template {
       width: 1200px;
       max-width: 100%;
       margin: 0 auto;
+      padding-bottom: 120px;
       z-index: 1;
       display: flex;
       flex-wrap: wrap;
       gap: 0;
       position: relative;
-      .left {
-        width: 400px;
-        position: sticky;
-        top: 30px;
-        .team-header {
-          padding-top: 30px;
-          * {
-            color: $text-d;
-          }
-          .team-title {
-            display: flex;
-            gap: 25px;
-            font-size: 32px;
-          }
-          .job-title {
-            font-size: 24px;
+      .team-header {
+        display: flex;
+        align-items: center;
+        gap: 80px;
+        width: 100%;
+        @media (max-width: 544px) {
+          flex-direction: column;
+          gap: 40px;
+        }
+        .team-thumb {
+          max-width: 320px;
+          overflow: hidden;
+          border-radius: 100%;
+        }
+        .team-title {
+          flex-shrink: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          font-size: 32px;
+        }
+        .name {
+          font-family: "Noto Sans TC", Sans-serif;
+          font-size: 28px;
+          font-weight: 700;
+          color: #1A1A1A;
+          margin: 0;
+          @media (max-width: 768px) {
+            // font-size: 20px;
           }
         }
         .name-en {
-          font-size: 20px;
-          color: $text;
+          font-family: $font-oooh-baby;
+          font-size: 24px;
+          font-weight: 400;
+          color: #1A1A1A;
+          margin: 0;
+          letter-spacing: 5px;
         }
       }
-      .right {
-        width: calc(100% - 400px);
-        padding-left: 13%;
-       
+      .team-content {
+        margin: 80px auto;
       }
-      @media (max-width: 921px) {
-        .left {
-          width: 40%;
-        }
-        .right {
-          width: 60%;
-          padding-left: 8%;
-        }
-      }
-      @media (max-width: 768px) {
-        flex-direction: column;
-        .left {
-          width: 100%;
-        }
-        .right {
-          width: 100%;
-          padding-left: 0;
+      .back {
+        border-top: 1px solid #434334;
+        width: 100%;
+        padding-top: 48px;
+        a {
+          color: #434334;
+          font-size: 16px;
+          &::before {
+            @include arrow(left, #434334, 10px);
+            border-width: 2px;
+            margin-right: 20px;
+          }
+          &:hover {
+            opacity: 0.5;
+          }
         }
       }
     }
