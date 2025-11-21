@@ -54,7 +54,6 @@ get_header();
 
     
   </div>
-
   
 </main>
 

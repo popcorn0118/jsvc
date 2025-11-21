@@ -112,3 +112,56 @@ function create_custom_taxonomy() {
 add_action( 'init', 'create_custom_taxonomy', 0 );
 
 
+
+/**
+ * TranslatePress：雙語切換短代碼 [lang_toggle]
+ * 中文頁顯示 En → 跳英文頁
+ * 英文頁顯示 中 → 跳中文頁
+ */
+
+/**
+ * 取得目標語言網址（封裝 TranslatePress 函式）
+ */
+function qz_get_url_for_language( $lang, $url = null ) {
+    if ( ! class_exists( 'TRP_Translate_Press' ) ) {
+        return $url;
+    }
+
+    $trp           = TRP_Translate_Press::get_trp_instance();
+    $url_converter = $trp->get_component( 'url_converter' );
+
+    return $url_converter->get_url_for_language( $lang, $url, '' );
+}
+
+/**
+ * 語系切換按鈕短代碼
+ */
+add_shortcode( 'lang_toggle', function() {
+
+    if ( is_admin() ) return '';
+
+    $current_locale = get_locale();
+    $scheme         = is_ssl() ? 'https://' : 'http://';
+    $current_url    = $scheme . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+    if ( $current_locale === 'zh_TW' ) {
+        $target_lang = 'en_US';
+        $label       = 'En';
+    } else {
+        $target_lang = 'zh_TW';
+        $label       = '中';
+    }
+
+    $target_url = qz_get_url_for_language( $target_lang, $current_url );
+
+    // 使用 data-no-translation 避免被 TranslatePress JS 改寫
+    $output  = '<div data-no-translation>';
+    $output .= '<a href="' . esc_url( $target_url ) . '" class="lang-toggle-btn" data-no-translation-href>';
+    $output .= esc_html( $label );
+    $output .= '</a></div>';
+
+    return $output;
+});
+
+
+
