@@ -13,7 +13,7 @@ $map  = [
   // 腦先專欄
   'article' => [
     'post_type' => 'post',
-    'per_page'  => 12,
+    'per_page'  => 5,
     'tax_cat'   => 'category',
     'tax_tag'   => 'post_tag',
     'recent_limit' => 5,

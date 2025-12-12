@@ -96,6 +96,7 @@ a {
   display: flex;
   .elementor-button  {
     display: flex;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -971,7 +972,7 @@ body.page-template-page-list, body.archive {
                   }
                   &:hover {
                     * {
-                      color: $second;
+                      opacity: 0.5;
                     }
                   }
                 }
@@ -1144,7 +1145,7 @@ body.single, body.search {
       }
 
       @media (max-width: 544px) {
-        padding: 57px 0 30px 0;
+        padding: 50px 0 30px 0;
         .nav-previous, .nav-next {
           > a {
             padding: 0;
@@ -1348,29 +1349,6 @@ body.search {
         background-color: $bg;
         margin-bottom: -10px;
         padding-right: 15px;
-        // &::before {
-        //   content: '';
-        //   position: absolute;
-        //   right: 0;
-        //   width: 20px;
-        //   height: 20px;
-        //   transform: rotate(30deg);
-        //   right: -7px;
-        //   bottom: 4px;
-        //   border-bottom: 1px solid $primary;
-        //   // flex: 0 0 auto;
-        // }
-        // &::after {
-        //   content: '';
-        //   // flex: 0 0 auto;
-        //   position: absolute;
-        //   right: 0;
-        //   bottom: 0;
-        //   display: inline-block;
-        //   width: calc(100% - 72px);
-        //   border-bottom: 1px solid $primary;
-          
-        // }
         @media (max-width: 768px) {
           &::before, &::after {
             display: none;
@@ -1381,13 +1359,10 @@ body.search {
       }
     }
     &:last-of-type {
-      .elementor-icon-box-title {     
-        > span {
-          > span {
-            &::before, &::after {
-              display: none;
-            }
-          }
+      .elementor-icon-box-title { 
+        border-bottom: 1px solid transparent;    
+        &::after {
+          display: none;
         }
       } 
     }

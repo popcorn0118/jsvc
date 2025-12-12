@@ -6,7 +6,7 @@ jQuery(document).ready(function ($) {
     slidesToScroll: 1,
     arrows: false,
     dots: true,
-    autoplay: false,          // 自動輪播
+    autoplay: true,          // 自動輪播
     autoplaySpeed: 5000,     // 每張停留 5 秒（毫秒）
     pauseOnHover: true,      // 滑鼠移上去暫停
     pauseOnDotsHover: true,  // 滑到點點上也暫停
