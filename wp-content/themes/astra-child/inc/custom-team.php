@@ -2,7 +2,7 @@
 
 /* =================================
 
-  關於我們頁面 > 專業醫療團隊 輪播區塊
+  團隊列表
   "<?php require get_theme_file_path( 'inc/custom-team.php' ); ?>"
   "[astra_custom_layout id=3943]"
 
@@ -58,8 +58,20 @@ $column = get_posts($args_column);
 				<img src="<?php echo !empty($img[0]) ? $img[0] : $img_default; ?>" alt="<?php echo $title; ?>" />
 			</div>
 			<div class="head">
-				<h3 class="name"><?php echo $title; ?></h3>
-				<h5 class="name-en"><?php echo $name_en; ?></h5>
+				<?php
+					// TranslatePress：判斷當前語系（抓不到就 fallback 用 WP locale）
+					$lang = function_exists('qz_trp_current_lang') ? qz_trp_current_lang() : get_locale();
+					// 這裡以 zh_TW 視為中文頁
+					$is_zh = ( $lang === 'zh_TW' );
+				?>
+				<?php if ( $is_zh ) : ?>
+					<!-- 中文 -->
+					<h3 class="name"><?php echo esc_html( $title ); ?></h3>
+					<h5 class="name-en"><?php echo esc_html( $name_en ); ?></h5>
+				<?php else : ?>
+					<!-- 英文 -->
+					<h3 class="name"><?php echo esc_html( $name_en ); ?></h3>
+				<?php endif; ?>
 			</div>
 		</a>
 	</li>		

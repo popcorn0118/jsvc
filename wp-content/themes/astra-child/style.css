@@ -1164,7 +1164,7 @@ body.single .post-navigation .nav-previous .ast-post-nav, body.search .post-navi
 body.single .post-navigation .nav-previous .ast-post-nav .ahfb-svg-iconset, body.search .post-navigation .nav-previous .ast-post-nav .ahfb-svg-iconset {
   transform: scaleX(-1);
 }
-/* line 1141, style.scss */
+/* line 1140, style.scss */
 body.single .post-navigation .nav-next .ast-post-nav, body.search .post-navigation .nav-next .ast-post-nav {
   display: flex;
   justify-content: end;
@@ -1174,107 +1174,107 @@ body.single .post-navigation .nav-next .ast-post-nav, body.search .post-navigati
   body.single .post-navigation, body.search .post-navigation {
     padding: 50px 0 30px 0;
   }
-  /* line 1149, style.scss */
+  /* line 1148, style.scss */
   body.single .post-navigation .nav-previous, body.single .post-navigation .nav-next, body.search .post-navigation .nav-previous, body.search .post-navigation .nav-next {
     display: flex;
     align-items: center;
   }
-  /* line 1150, style.scss */
+  /* line 1149, style.scss */
   body.single .post-navigation .nav-previous > a, body.single .post-navigation .nav-next > a, body.search .post-navigation .nav-previous > a, body.search .post-navigation .nav-next > a {
     padding: 0;
   }
-  /* line 1155, style.scss */
+  /* line 1154, style.scss */
   body.single .post-navigation .nav-previous .ast-post-nav, body.single .post-navigation .nav-next .ast-post-nav, body.search .post-navigation .nav-previous .ast-post-nav, body.search .post-navigation .nav-next .ast-post-nav {
     margin: 0;
   }
-  /* line 1159, style.scss */
+  /* line 1158, style.scss */
   body.single .post-navigation .nav-next, body.search .post-navigation .nav-next {
     justify-content: end;
   }
 }
 
-/* line 1172, style.scss */
+/* line 1171, style.scss */
 body.search .ast-archive-entry-banner {
   position: relative;
 }
-/* line 1183, style.scss */
+/* line 1182, style.scss */
 body.search .ast-archive-entry-banner .ast-container {
   position: relative;
 }
-/* line 1185, style.scss */
+/* line 1184, style.scss */
 body.search .ast-archive-entry-banner .ast-container h1, body.search .ast-archive-entry-banner .ast-container h1 * {
   font-size: 46px;
 }
 @media (max-width: 24px) {
-  /* line 1185, style.scss */
+  /* line 1184, style.scss */
   body.search .ast-archive-entry-banner .ast-container h1, body.search .ast-archive-entry-banner .ast-container h1 * {
     font-size: 24px;
   }
 }
-/* line 1195, style.scss */
+/* line 1194, style.scss */
 body.search .ast-row > article {
   margin-bottom: 3em;
 }
-/* line 1197, style.scss */
+/* line 1196, style.scss */
 body.search .ast-row > article * {
   color: var(--e-global-color-text);
 }
-/* line 1200, style.scss */
+/* line 1199, style.scss */
 body.search .ast-row > article .post-thumb-img-content {
   margin: 0 !important;
 }
-/* line 1206, style.scss */
+/* line 1205, style.scss */
 body.search .ast-row > article .entry-meta .ast-taxonomy-container a:hover {
   color: #1A1A1A;
 }
-/* line 1212, style.scss */
+/* line 1211, style.scss */
 body.search .ast-row > article .entry-title {
   font-size: 20px;
   font-weight: 500;
 }
-/* line 1215, style.scss */
+/* line 1214, style.scss */
 body.search .ast-row > article .entry-title a {
   color: #1A1A1A;
 }
-/* line 1219, style.scss */
+/* line 1218, style.scss */
 body.search .ast-row > article .ast-excerpt-container * {
   font-size: 16px;
   font-weight: 400;
 }
-/* line 1223, style.scss */
+/* line 1222, style.scss */
 body.search .ast-row > article .read-more {
   display: none;
 }
-/* line 1231, style.scss */
+/* line 1230, style.scss */
 body.search .no-results.not-found {
   min-height: 300px;
 }
-/* line 1233, style.scss */
+/* line 1232, style.scss */
 body.search .no-results.not-found #search-field {
   border: 1px solid #BEBEBE;
   height: 67px;
   background-color: transparent;
 }
-/* line 1238, style.scss */
+/* line 1237, style.scss */
 body.search .no-results.not-found .search-submit {
   height: 100%;
   box-shadow: 0 0 0 transparent;
   font-size: 24px;
 }
-/* line 1243, style.scss */
+/* line 1242, style.scss */
 body.search .no-results.not-found .search-submit .ast-icon svg {
   margin-top: -3px;
   fill: var(--e-global-color-c841111);
 }
 
-/* line 1254, style.scss */
+/* line 1253, style.scss */
 .pagination {
   display: inline-flex;
   flex-wrap: wrap;
   gap: 25px;
   width: 100%;
 }
-/* line 1262, style.scss */
+/* line 1261, style.scss */
 .pagination .page-numbers {
   display: inline-flex;
   align-items: center;
@@ -1285,58 +1285,58 @@ body.search .no-results.not-found .search-submit .ast-icon svg {
   color: var(--e-global-color-text);
   font-size: 20px;
 }
-/* line 1271, style.scss */
+/* line 1270, style.scss */
 .pagination .page-numbers svg {
   fill: var(--e-global-color-text);
 }
-/* line 1274, style.scss */
+/* line 1273, style.scss */
 .pagination .page-numbers.current, .pagination .page-numbers:hover {
   color: var(--e-global-color-0729a00);
   background-color: var(--e-global-color-text);
 }
-/* line 1277, style.scss */
+/* line 1276, style.scss */
 .pagination .page-numbers.current svg, .pagination .page-numbers:hover svg {
   fill: var(--e-global-color-0729a00);
 }
-/* line 1281, style.scss */
+/* line 1280, style.scss */
 .pagination .page-numbers.prev {
   transform: rotate(180deg);
 }
-/* line 1284, style.scss */
+/* line 1283, style.scss */
 .pagination .page-numbers.next {
   margin-bottom: 50px;
 }
 
-/* line 1292, style.scss */
+/* line 1291, style.scss */
 .ast-pagination .page-numbers.prev {
   transform: rotate(0deg);
 }
-/* line 1296, style.scss */
+/* line 1295, style.scss */
 .ast-pagination .page-numbers.next {
   padding-right: 20px !important;
 }
 
-/* line 1307, style.scss */
+/* line 1306, style.scss */
 .partners .item .elementor-widget-text-editor {
   flex: 1 1 auto;
 }
-/* line 1310, style.scss */
+/* line 1309, style.scss */
 .partners .item .elementor-widget-icon-list {
   margin-top: auto;
 }
 
-/* line 1318, style.scss */
+/* line 1317, style.scss */
 .about-step .icon-step {
   counter-increment: step;
 }
-/* line 1320, style.scss */
+/* line 1319, style.scss */
 .about-step .icon-step .elementor-icon-box-title {
   border-bottom: 1px solid #4E4E4E;
   position: relative;
   display: flex;
   padding-top: 40px;
 }
-/* line 1325, style.scss */
+/* line 1324, style.scss */
 .about-step .icon-step .elementor-icon-box-title::before {
   content: "Step " counter(step) ".";
   position: absolute;
@@ -1346,7 +1346,7 @@ body.search .no-results.not-found .search-submit .ast-icon svg {
   z-index: 1;
   font-weight: 400;
 }
-/* line 1334, style.scss */
+/* line 1333, style.scss */
 .about-step .icon-step .elementor-icon-box-title::after {
   content: '';
   position: absolute;
@@ -1358,7 +1358,7 @@ body.search .no-results.not-found .search-submit .ast-icon svg {
   bottom: 3px;
   border-bottom: 1px solid var(--e-global-color-primary);
 }
-/* line 1347, style.scss */
+/* line 1346, style.scss */
 .about-step .icon-step .elementor-icon-box-title > span {
   position: relative;
   background-color: var(--e-global-color-0729a00);
@@ -1366,16 +1366,30 @@ body.search .no-results.not-found .search-submit .ast-icon svg {
   padding-right: 15px;
 }
 @media (max-width: 768px) {
-  /* line 1353, style.scss */
+  /* line 1352, style.scss */
   .about-step .icon-step .elementor-icon-box-title > span::before, .about-step .icon-step .elementor-icon-box-title > span::after {
     display: none;
   }
 }
-/* line 1362, style.scss */
+/* line 1361, style.scss */
 .about-step .icon-step:last-of-type .elementor-icon-box-title {
   border-bottom: 1px solid transparent;
 }
-/* line 1364, style.scss */
+/* line 1363, style.scss */
 .about-step .icon-step:last-of-type .elementor-icon-box-title::after {
   display: none;
+}
+
+/* line 1374, style.scss */
+body.translatepress-en_US .en-hide {
+  display: none !important;
+}
+/* line 1377, style.scss */
+body.translatepress-en_US header .custom-logo-link img, body.translatepress-en_US .footer-logo img {
+  max-width: 227.87px !important;
+  width: 227.87px !important;
+}
+/* line 1381, style.scss */
+body.translatepress-en_US .contact-list {
+  --e-con-grid-template-columns: repeat(1, 1fr) !important;
 }

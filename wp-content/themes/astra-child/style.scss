@@ -1136,7 +1136,6 @@ body.single, body.search {
           }
         }
       }
-        
       .nav-next {
         .ast-post-nav {
           display: flex;
@@ -1370,3 +1369,16 @@ body.search {
 }
 
 	
+// 英文版
+body.translatepress-en_US {
+  .en-hide {
+    display: none !important;
+  }
+  header .custom-logo-link img, .footer-logo img {
+    max-width: 227.87px !important;
+    width: 227.87px !important;
+  }
+  .contact-list {
+    --e-con-grid-template-columns: repeat(1, 1fr) !important;
+  }
+}

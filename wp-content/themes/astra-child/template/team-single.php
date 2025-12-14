@@ -35,8 +35,22 @@ get_header();
             </figure>
           <?php endif; ?>
           <div class="team-title">
-              <h1 class="name"><?php echo esc_html($title); ?></h1>
-              <h6 class="name-en"><?php echo esc_html($name_en); ?></h6>
+              
+
+              <?php
+                // TranslatePress：判斷當前語系（抓不到就 fallback 用 WP locale）
+                $lang = function_exists('qz_trp_current_lang') ? qz_trp_current_lang() : get_locale();
+                // 這裡以 zh_TW 視為中文頁
+                $is_zh = ( $lang === 'zh_TW' );
+              ?>
+              <?php if ( $is_zh ) : ?>
+                <!-- 中文 -->
+                <h1 class="name"><?php echo esc_html($title); ?></h1>
+                <h6 class="name-en"><?php echo esc_html($name_en); ?></h6>
+              <?php else : ?>
+                <!-- 英文 -->
+                <h1 class="name"><?php echo esc_html($name_en); ?></h1>
+              <?php endif; ?>
           </div>
         </div>
 

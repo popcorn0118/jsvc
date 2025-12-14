@@ -10,7 +10,7 @@ get_header();
 // 依頁面 slug 設定
 $slug = get_post_field('post_name', get_queried_object_id());
 $map  = [
-  // 腦先專欄
+  // 文章
   'article' => [
     'post_type' => 'post',
     'per_page'  => 5,
@@ -18,14 +18,14 @@ $map  = [
     'tax_tag'   => 'post_tag',
     'recent_limit' => 5,
   ],
-  // 實績案例
-  'cases' => [
-    'post_type' => 'case',
-    'per_page'  => 2,
-    'tax_cat'   => 'case-type',
-    'tax_tag'   => 'case-tag',
-    'recent_limit' => 5,
-  ],
+  // 其他post_type: ex:實績案例
+  // 'cases' => [
+  //   'post_type' => 'case',
+  //   'per_page'  => 2,
+  //   'tax_cat'   => 'case-type',
+  //   'tax_tag'   => 'case-tag',
+  //   'recent_limit' => 5,
+  // ],
 ];
 
 $cfg   = $map[$slug] ?? ['post_type'=>'post','per_page'=>12,'tax_cat'=>'category','tax_tag'=>'post_tag','recent_limit'=>6];
