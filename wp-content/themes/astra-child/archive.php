@@ -2,6 +2,8 @@
 /**
  * Archive (Category/Tag/Tax/CPT Archive)
  * 與 page-list.php 結構一致；僅「加上」archive 相關 class 與 Banner 邏輯。
+ * 一頁顯示n頁設定：外掛＞自訂＞Post Tyoes＞網站文章/彙整
+ * 
  */
 
 get_header();
