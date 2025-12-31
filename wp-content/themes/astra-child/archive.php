@@ -161,19 +161,15 @@ $slug_page = get_page_by_path($slug);
                   <span class="line"></span>
 
                   <?php if (!is_wp_error($cats) && !empty($cats)): ?>
-                    <div class="cats">
-                      <?php foreach ($cats as $t): ?>
-                        <a href="<?php echo esc_url(get_term_link($t)); ?>" class="cat"><?php echo esc_html($t->name); ?></a>
-                      <?php endforeach; ?>
-                    </div>
+                    <?php foreach ($cats as $t): ?>
+                      <a href="<?php echo esc_url(get_term_link($t)); ?>" class="cat"><?php echo esc_html($t->name); ?></a>
+                    <?php endforeach; ?>
                   <?php endif; ?>
 
                   <?php if (!is_wp_error($tags) && !empty($tags)): ?>
-                    <div class="tags">
-                      <?php foreach ($tags as $t): ?>
-                        <a href="<?php echo esc_url(get_term_link($t)); ?>" class="tag"><?php echo esc_html($t->name); ?></a>
-                      <?php endforeach; ?>
-                    </div>
+                    <?php foreach ($tags as $t): ?>
+                      <a href="<?php echo esc_url(get_term_link($t)); ?>" class="tag"><?php echo esc_html($t->name); ?></a>
+                    <?php endforeach; ?>
                   <?php endif; ?>
                 </div>
 

@@ -864,6 +864,7 @@ body.page-template-page-list, body.archive {
                 }
                 .meta {
                   display: flex;
+                  flex-wrap: wrap;
                   align-items: center;
                   margin-top: 10px;
                   * {
@@ -879,9 +880,9 @@ body.page-template-page-list, body.archive {
                     background-color: $text;
                     margin: 3px 12px 0 12px;
                   }
-                  .cats, .tags {
+
                     display: flex;
-                    > a {
+                    .cat, .tag {
                       font-size: 16px;
                       &::after {
                         content: '、';
@@ -899,7 +900,7 @@ body.page-template-page-list, body.archive {
                         }
                       }
                     }
-                  }
+                  
                 }
                 .title {
                   @include word-count(2);
@@ -1368,17 +1369,28 @@ body.search {
   }
 }
 
-	
-// 英文版
-body.translatepress-en_US {
-  .en-hide {
-    display: none !important;
+
+
+/**** 語系特例 ****/
+body {
+// 中文版
+  &.translatepress-zh_TW {
+    .zh-hide {
+      display: none !important;
+    }
   }
-  header .custom-logo-link img, .footer-logo img {
-    max-width: 227.87px !important;
-    width: 227.87px !important;
-  }
-  .contact-list {
-    --e-con-grid-template-columns: repeat(1, 1fr) !important;
+
+  // 英文版
+  &.translatepress-en_US {
+    .en-hide {
+      display: none !important;
+    }
+    header .custom-logo-link img, .footer-logo img {
+      max-width: 227.87px !important;
+      width: 227.87px !important;
+    }
+    .contact-list {
+      --e-con-grid-template-columns: repeat(1, 1fr) !important;
+    }
   }
 }

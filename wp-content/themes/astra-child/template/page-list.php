@@ -47,7 +47,7 @@ $q = new WP_Query([
       $slug = get_post_field( 'post_name', get_post() );
 
       if ( $slug === 'article' ) {
-        echo esc_html( 'Portfolio' );
+        echo esc_html( 'BLOG' );
       } else {
         echo esc_html( get_the_title() );
       }
@@ -93,19 +93,15 @@ $q = new WP_Query([
                   <span class="line"></span>
 
                   <?php if (!is_wp_error($cats) && !empty($cats)) : ?>
-                    <div class="cats">
                       <?php foreach ($cats as $i => $t): ?>
                         <a href="<?php echo esc_url(get_term_link($t)); ?>" class="cat"><?php echo esc_html($t->name); ?></a>
                       <?php endforeach; ?>
-                    </div>
                   <?php endif; ?>
 
                   <?php if (!is_wp_error($tags) && !empty($tags)) : ?>
-                    <div class="tags">
                       <?php foreach ($tags as $t): ?>
                         <a href="<?php echo esc_url(get_term_link($t)); ?>" class="tag"><?php echo esc_html($t->name); ?></a>
                       <?php endforeach; ?>
-                    </div>
                   <?php endif; ?>
                 </div>
 
