@@ -11,8 +11,16 @@ Template: astra
 */
 
 @import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Roboto:wght@300;400;500;700&display=swap");
 
 $font-oooh-baby: "Oooh Baby", cursive;
+$font-zh: "Noto Sans TC";
+$font-en: "Roboto";
+$font-base: $font-en, $font-zh, system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+
+:root {
+  --font-base: #{$font-base};
+}
 
 
 $primary: var(--e-global-color-primary);
@@ -60,8 +68,17 @@ $bg: var( --e-global-color-0729a00 );
 }
 
 body {
+  
   * {
+    font-family: var(--font-base) !important;
+    font-synthesis: none;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
   }
+}
+// 表單元件常被瀏覽器強制換字體，補一下
+:where(button, input, textarea, select) {
+  font-family: var(--font-base) !important;
 }
 a {
     text-decoration: none;
@@ -740,7 +757,7 @@ body.team-template {
           }
         }
         .name-en {
-          font-family: $font-oooh-baby;
+          font-family: #{$font-oooh-baby} !important;
           font-size: 24px;
           font-weight: 400;
           color: #1A1A1A;
